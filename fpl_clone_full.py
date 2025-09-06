@@ -455,7 +455,7 @@ with tabs[0]:
             st.error("Ange namn")
         else:
             create_manager(new_name)
-            st.experimental_rerun()
+            st.rerun()
 
 # ----------------- Managers tab -----------------
 with tabs[1]:
@@ -591,3 +591,4 @@ with tabs[4]:
 
 st.markdown("---")
 st.caption("Note: This app implements nearly all FPL core features (squad rules, transfers, chips, GW scoring) in a single file. It's a prototype — for production you'd add authentication, concurrency handling, persistent DB, nicer UI/drag-and-drop.")
+
