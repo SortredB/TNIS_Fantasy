@@ -582,7 +582,7 @@ with tabs[4]:
     rows = []
     for name,m in st.session_state['league']['managers'].items():
         rows.append({"Manager": name, "Points": m['total_points'], "Bank": m['bank'], "FreeTransfers": m['free_transfers']})
-    df = pd.DataFrame(rows).sort_values('Poäng', ascending=False)
+    df = pd.DataFrame(rows).sort_values('score', ascending=False)
     st.table(df)
     # Export league JSON button (again)
     if st.button("Export league JSON (bottom)"):
@@ -591,5 +591,6 @@ with tabs[4]:
 
 st.markdown("---")
 st.caption("Note: This app implements nearly all FPL core features (squad rules, transfers, chips, GW scoring) in a single file. It's a prototype — for production you'd add authentication, concurrency handling, persistent DB, nicer UI/drag-and-drop.")
+
 
 
